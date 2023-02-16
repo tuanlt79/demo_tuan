@@ -35,7 +35,7 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints: 58:41:2b:7b:96:38:57:a4:52:08:b9:84:f2:a4:0f:a9
-      - run: ssh -oStrictHostKeyChecking=no tuanlt_itdev@35.239.65.202 "/home/tuanlt_itdev/deploy.sh"
+      - run: ssh -oStrictHostKeyChecking=no tuanlt_itdev@34.71.227.166 "/home/tuanlt_itdev/deploy.sh"
 workflows:
   my-deploy: # This is the name of the workflow, feel free to change it to better match your workflow.
     # Inside the workflow, you define the jobs you want to run.
