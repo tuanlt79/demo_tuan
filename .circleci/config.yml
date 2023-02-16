@@ -30,6 +30,12 @@ jobs:
             echo "Digest is: $(</tmp/digest.txt)"
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
+  deploy:
+    executor: docker/docker
+    steps:
+      - add_ssh_keys:
+          fingerprints: 9b:0b:67:1c:39:0c:94:2b:3b:4b:9f:1a:cd:b8:37:ba
+      - run: ssh -oStrictHostKeyChecking=no root@35.226.103.216 "./deploy.sh"
 workflows:
   my-deploy: # This is the name of the workflow, feel free to change it to better match your workflow.
     # Inside the workflow, you define the jobs you want to run.
@@ -48,3 +54,6 @@ workflows:
             branches:
               only:
                 - master
+      - deploy:
+          requires:
+            - build-and-push
