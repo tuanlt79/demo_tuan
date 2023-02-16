@@ -34,8 +34,8 @@ jobs:
     executor: docker/docker
     steps:
       - add_ssh_keys:
-          fingerprints: 9b:0b:67:1c:39:0c:94:2b:3b:4b:9f:1a:cd:b8:37:ba
-      - run: ssh -oStrictHostKeyChecking=no root@35.226.103.216 "./deploy.sh"
+          fingerprints: 58:41:2b:7b:96:38:57:a4:52:08:b9:84:f2:a4:0f:a9
+      - run: ssh -oStrictHostKeyChecking=no tuanlt_itdev@35.239.65.202 "./deploy.sh"
 workflows:
   my-deploy: # This is the name of the workflow, feel free to change it to better match your workflow.
     # Inside the workflow, you define the jobs you want to run.
