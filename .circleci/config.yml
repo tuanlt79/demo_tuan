@@ -8,7 +8,7 @@ orbs:
 
 jobs:
   build-and-push:
-    enviroment:
+    environment:
       DOCKER_IMAGE: tuanlt79/demo-tuan
       DOCKER_TAG: latest
     executor: docker/docker
